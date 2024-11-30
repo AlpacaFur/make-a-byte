@@ -115,9 +115,17 @@ function roll(val?: number) {
   canvasElem.toBlob((blob) => {
     if (blob !== null) {
       const url = URL.createObjectURL(blob)
-      document.body.style.background = `url(${url}) #3a2354`
+      document.body.style.background = `url(${url}) var(--background)`
     }
   })
+
+  const degree = 360 * (byte / 255)
+  const percent = (byte / 255) * 100
+  document.body.style.setProperty("--background", `hsl(${degree}deg 80% 20%)`)
+  document.body.style.setProperty(
+    "--background-dark",
+    `hsl(${degree}deg 80% 10%)`
+  )
 
   numElem.textContent = String(byte)
 }
