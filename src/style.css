@@ -94,3 +94,11 @@ h1 {
 #asterisk.hidden {
   display: none;
 }
+
+.smaller-blocks {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
