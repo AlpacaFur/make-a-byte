@@ -12,12 +12,6 @@ const CHARS_AND_NAMES =
       }
     })
 
-console.log(
-  CHARS_AND_NAMES.map((char) => char.char.codePointAt(0)?.toString(16)).join(
-    ","
-  )
-)
-
 const remapped: Record<number, string> = {
   0: "2400",
   1: "2401",
