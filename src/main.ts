@@ -120,7 +120,6 @@ function roll(val?: number) {
   })
 
   const degree = 360 * (byte / 255)
-  const percent = (byte / 255) * 100
   document.body.style.setProperty("--background", `hsl(${degree}deg 80% 20%)`)
   document.body.style.setProperty(
     "--background-dark",
