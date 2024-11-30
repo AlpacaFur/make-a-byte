@@ -126,7 +126,7 @@ const now = new Date()
 const time = `${String(now.getHours()).padStart(2, "0")}:${String(
   now.getMinutes()
 ).padStart(2, "0")}`
-if (time === "2:56" || time === "14:56") {
+if (time === "02:56" || time === "14:56") {
   roll()
 
   const containerElem = document.getElementById("container")!
