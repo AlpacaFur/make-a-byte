@@ -2,6 +2,7 @@
   font-family: "Cascadia Code";
   /* Special subset of CascadiaCodeNF with just the characters we use. */
   src: url("/CascadiaCodeNF-byte.woff2");
+  font-weight: 200 700;
 }
 
 :root {
@@ -77,7 +78,6 @@ p {
 h1 {
   color: white;
   text-align: center;
-  font-weight: 600;
 }
 
 .char-group {
