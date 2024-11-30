@@ -1,0 +1,95 @@
+@font-face { 
+  font-family: "Cascadia Code";
+  /* Special subset of CascadiaCodeNF with just the characters we use. */
+  src: url("/CascadiaCodeNF-byte.woff2");
+}
+
+:root {
+  --background: #3a2354;
+  --background-dark: #21053f;
+}
+
+body {
+	background: var(--background);
+	font-family: "Cascadia Code", monospace;
+  margin: 0;
+}
+
+p {
+	color: white;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  width: 100dvw;
+  box-sizing: border-box;
+  gap: 10px;
+}
+
+#char {
+  background: var(--background-dark);
+  padding: 20px;
+  border-radius: 16px;
+  font-size: 72px;
+  margin: 0;
+  height: 84px;
+  white-space: pre;
+}
+
+.group {
+  background: var(--background-dark);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+#not-yet {
+  display: none;
+}
+
+.hide-data #not-yet {
+  display: block;
+}
+
+.hide-data .group, .hide-data #char, .hide-data .yes-yet {
+  display: none;
+}
+
+.group p {
+  margin: 0;
+  text-align: center;
+  font-weight: bold;
+  text-wrap-style: balance;
+}
+
+.group p:nth-child(2) {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.char-group {
+  display: flex;
+}
+
+#asterisk {
+  font-size: 40px;
+  margin-top: 10px;
+  margin-left: 10px;
+  text-decoration: dotted underline;
+}
+
+#asterisk.hidden {
+  display: none;
+}
