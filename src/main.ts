@@ -1,4 +1,5 @@
 import "./style.css"
+import { OPCODES } from "./opcodes"
 
 // https://www.unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WindowsBestFit/bestfit1252.txt
 const CHARS_AND_NAMES =
@@ -62,6 +63,8 @@ const charDescElem = document.getElementById("char-desc")!
 const hexElem = document.getElementById("hex")!
 const encodingElem = document.getElementById("encoding")!
 const asteriskElem = document.getElementById("asterisk")!
+const opcodeElem = document.getElementById("opcode")!
+const opcodeAsteriskElem = document.getElementById("opcode-asterisk")!
 
 function getNameForByteChar(byte: number) {
   return CHARS_AND_NAMES[byte].name
@@ -89,6 +92,26 @@ function roll(val?: number) {
 
   charDescElem.textContent = getNameForByteChar(byte)
   hexElem.textContent = byte.toString(16).padStart(2, "0").toUpperCase()
+
+  const opcodeInfo = OPCODES[byte];
+
+  opcodeElem.appendChild(document.createElement("span")).textContent = opcodeInfo.name;
+
+  const descElem = document.createElement("span");
+  descElem.textContent = opcodeInfo.desc;
+  descElem.style.fontSize = "16px";
+  opcodeElem.appendChild(descElem);
+
+  const addressingElem = document.createElement("span");
+  addressingElem.textContent = opcodeInfo.addressing;
+  addressingElem.style.fontSize = "16px";
+  opcodeElem.appendChild(addressingElem);
+
+  if (opcodeInfo.documented) {
+    opcodeAsteriskElem.classList.add("hidden");
+  } else {
+    opcodeAsteriskElem.classList.remove("hidden");
+  }
 
   const canvasElem = document.createElement("canvas")
   canvasElem.width = 288
