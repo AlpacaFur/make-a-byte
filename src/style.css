@@ -108,6 +108,10 @@ h1 {
   flex-direction: column;
 }
 
+#opcode>span:not(:first-child) {
+  font-size: 16px;
+}
+
 .opcode-group {
   display: flex;
 }

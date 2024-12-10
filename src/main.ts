@@ -96,16 +96,8 @@ function roll(val?: number) {
   const opcodeInfo = OPCODES[byte];
 
   opcodeElem.appendChild(document.createElement("span")).textContent = opcodeInfo.name;
-
-  const descElem = document.createElement("span");
-  descElem.textContent = opcodeInfo.desc;
-  descElem.style.fontSize = "16px";
-  opcodeElem.appendChild(descElem);
-
-  const addressingElem = document.createElement("span");
-  addressingElem.textContent = opcodeInfo.addressing;
-  addressingElem.style.fontSize = "16px";
-  opcodeElem.appendChild(addressingElem);
+  opcodeElem.appendChild(document.createElement("span")).textContent = opcodeInfo.desc;
+  opcodeElem.appendChild(document.createElement("span")).textContent = opcodeInfo.addressing;
 
   if (opcodeInfo.documented) {
     opcodeAsteriskElem.classList.add("hidden");
