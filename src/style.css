@@ -1,4 +1,4 @@
-@font-face { 
+@font-face {
   font-family: "Cascadia Code";
   /* Special subset of CascadiaCodeNF with just the characters we use. */
   src: url("/CascadiaCodeNF-byte.woff2");
@@ -84,14 +84,14 @@ h1 {
   display: flex;
 }
 
-#asterisk {
+#asterisk, #opcode-asterisk {
   font-size: 40px;
   margin-top: 10px;
   margin-left: 10px;
   text-decoration: dotted underline;
 }
 
-#asterisk.hidden {
+#asterisk.hidden, #opcode-asterisk.hidden {
   display: none;
 }
 
@@ -101,4 +101,17 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 10px;
+}
+
+#opcode {
+  display: flex;
+  flex-direction: column;
+}
+
+#opcode>span:not(:first-child) {
+  font-size: 16px;
+}
+
+.opcode-group {
+  display: flex;
 }
